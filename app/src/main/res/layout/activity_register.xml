@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="177dp"
+        android:layout_marginBottom="193dp"
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPassword" />
@@ -55,9 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="49dp"
         android:clickable="true"
-        android:fontFamily="monospace"
         android:text="Register"
         android:textSize="18sp"
         android:typeface="normal" />
