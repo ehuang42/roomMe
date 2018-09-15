@@ -1,4 +1,4 @@
-package com.example.ehuang42.roommateapp
+package com.hackmit.roommie
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -11,10 +11,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
-//import com.facebook.FacebookSdk;
-//import com.facebook.appevents.AppEventsLogger;
-//import com.facebook.login.widget.LoginButton
-
 
 class MainActivity : AppCompatActivity() {
 

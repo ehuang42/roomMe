@@ -1,4 +1,4 @@
-package com.example.ehuang42.roommateapp
+package com.hackmit.roommie
 
 import org.junit.Test
 

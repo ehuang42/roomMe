@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "221695052989",
+    "firebase_url": "https://hackmit-c422e.firebaseio.com",
+    "project_id": "hackmit-c422e",
+    "storage_bucket": "hackmit-c422e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221695052989:android:118137949dfb1594",
+        "android_client_info": {
+          "package_name": "com.hackmit.roommie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221695052989-3hkgp7kobtelkh9cq2cf44h93rt6qcll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackmit.roommie",
+            "certificate_hash": "8120d9f16ef18a63b66113ceda8158f68545c555"
+          }
+        },
+        {
+          "client_id": "221695052989-p3p0fabliut023iiehlc1snabui1aans.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWmbvI4wPFZrIbL_asEVQi6gX4A8S_ax0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221695052989-p3p0fabliut023iiehlc1snabui1aans.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
