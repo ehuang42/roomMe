@@ -1,7 +1,11 @@
+package com.example.ehuang42.roommateapp.Model;
+
+import java.util.List;
+
 public class Quest {
     private String name;
     private User giver;
-    private User[] takers;
+    private UserGroup takers;
     private int reward;
     private String description;
 
@@ -9,14 +13,21 @@ public class Quest {
         this.name = name;
         this.giver = giver;
         this.reward = reward;
-        this.takers = new String[5];
+        this.takers = new UserGroup();
+        this.description = "This is a quest";
+    }
+    public Quest(String name) {
+        this.name = name;
+        this.giver = null;
+        this.reward = 0;
+        this.takers = new UserGroup();
         this.description = "This is a quest";
     }
 
-    public User getName() {
+    public String getName() {
         return name;
     }
-    public void setName(User name) {
+    public void setName(String name) {
         this.name = name;
     }
     public String getDescription() {
@@ -38,13 +49,19 @@ public class Quest {
         this.reward = reward;
     }
 
-    public User[] getTakers() {
+    public UserGroup getUsers() {
         return takers;
     }
-    public void setTakers(User[] takers) {
+    public void setUsers(UserGroup takers) {
         this.takers = takers;
     }
     public String toString() {
         return name + ", a quest by" + giver.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Quest c = (Quest) o;
+        return (c.getName().equals(name));
     }
 }
