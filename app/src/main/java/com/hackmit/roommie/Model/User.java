@@ -1,4 +1,4 @@
-package com.example.ehuang42.roommateapp.Model;
+package com.hackmit.roommie.Model;
 
 public class User {
     public enum GENDER {

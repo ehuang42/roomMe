@@ -5,23 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Controllers.MainActivity">
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--&lt;!&ndash;top tool bar&ndash;&gt;-->
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/relLayout1">-->
 
-            <!--<include layout = "@layout/layout_top_tab"/>-->
-
-        <!--</RelativeLayout>-->
-
-        <!--middle section (body)-->
         <RelativeLayout
             android:id="@+id/relLayout2"
             android:layout_width="match_parent"
@@ -70,9 +60,6 @@
                 android:textSize="12sp" />
 
 
-            <!--facebook icon or whatever-->
-
-
             <!--sign up-->
             <Button
                 android:id="@+id/login_btn"
@@ -96,26 +83,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="70dp"
                 android:clickable="true"
-                android:fontFamily="monospace"
                 android:text="Sign Up"
                 android:textSize="18sp"
                 android:typeface="normal" />
 
-            <!--<com.facebook.login.widget.LoginButton-->
-            <!--android:id="@+id/facebook_btn"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_gravity="center_horizontal"-->
-            <!--android:layout_marginBottom="90dp" />-->
-
         </RelativeLayout>
-
-
-        <!--bottom navigation-->
-
-        <!--<include layout = "@layout/bottom_navigation_view"/>-->
 
 
     </RelativeLayout>

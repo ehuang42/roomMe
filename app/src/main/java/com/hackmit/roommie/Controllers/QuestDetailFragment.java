@@ -1,8 +1,6 @@
-package com.example.ehuang42.roommateapp.Controllers;
+package com.hackmit.roommie.Controllers;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -14,10 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.ehuang42.roommateapp.Model.Model;
-import com.example.ehuang42.roommateapp.Model.Quest;
-import com.example.ehuang42.roommateapp.Model.User;
-import com.example.ehuang42.roommateapp.R;
+import com.hackmit.roommie.Model.Model;
+import com.hackmit.roommie.Model.Quest;
+import com.hackmit.roommie.Model.User;
+import com.hackmit.roommie.R;
 
 import java.util.List;
 

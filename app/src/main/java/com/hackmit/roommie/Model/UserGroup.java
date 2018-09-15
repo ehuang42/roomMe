@@ -1,6 +1,5 @@
-package com.example.ehuang42.roommateapp.Model;
+package com.hackmit.roommie.Model;
 
-import java.util.List;
 import java.util.ArrayList;
 
 public class UserGroup {
