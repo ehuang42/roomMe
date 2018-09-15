@@ -1,4 +1,4 @@
-package com.example.ehuang42.thriftletnew
+package com.example.ehuang42.roommateapp
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
