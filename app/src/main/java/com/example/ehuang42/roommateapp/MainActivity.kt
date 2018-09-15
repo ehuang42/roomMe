@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val loginBtn = findViewById<View>(R.id.login_btn) as Button
+        val signupBtn = findViewById<View>(R.id.signup_btn)as Button
         loginBtn.setOnClickListener(View.OnClickListener {
             view -> login()
         })
