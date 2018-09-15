@@ -21,7 +21,7 @@ class register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val registerBtn = findViewById<View>(R.id.register_btn) as Button
+        val registerBtn = findViewById<View>(R.id.signup_btn) as Button
 
 
         mDatabase = FirebaseDatabase.getInstance().getReference("Names")
@@ -36,7 +36,7 @@ class register : AppCompatActivity() {
     private fun registerUser () {
         val emailTxt = findViewById<View>(R.id.username) as EditText
         val passwordTxt = findViewById<View>(R.id.password) as EditText
-        val nameTxt = findViewById<View>(R.id.firstname) as EditText
+        val nameTxt = findViewById<View>(R.id.username) as EditText
 
         var email = emailTxt.text.toString()
         var password = passwordTxt.text.toString()
