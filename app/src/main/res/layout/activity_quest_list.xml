@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="cs2340.gatech.edu.lab3.controllers.CourseListActivity">
+    tools:context="com.example.ehuang42.roommateapp.Controllers.QuestListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/course_list" />
+        <include layout="@layout/quest_list" />
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton
