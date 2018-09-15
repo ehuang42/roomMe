@@ -50,11 +50,11 @@ class register : AppCompatActivity() {
                     mDatabase.child(uid).child("Name").setValue(name)
                     startActivity(Intent(this, Timeline::class.java))
                     Toast.makeText(this, "Successfully registered :)", Toast.LENGTH_LONG).show()
-                }else {
+                } else {
                     Toast.makeText(this, "Error registering, try again later :(", Toast.LENGTH_LONG).show()
                 }
             })
-        }else {
+        } else {
             Toast.makeText(this,"Please fill up the Credentials :|", Toast.LENGTH_LONG).show()
         }
     }

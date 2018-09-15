@@ -21,22 +21,22 @@ class Timeline : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timeline)
+        //Tod-o: handle dataChange and onCancelled
 
 //        val nameTxt = findViewById<View>(R.id.lastname) as TextView
 
         var uid = user!!.uid
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("Names")
-
-        mDatabase.child(uid).child("Name").addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            override fun onDataChange(snapshot: DataSnapshot) {
+//        mDatabase = FirebaseDatabase.getInstance().getReference("Names")
+//
+//        mDatabase.child(uid).child("Name").addValueEventListener(object : ValueEventListener{
+//            override fun onCancelled(p0: DatabaseError) {
+//            }
+//
+//            override fun onDataChange(snapshot: DataSnapshot) {
 //                nameTxt.text =  "Welcome " + snapshot.value.toString()
-            }
-        })
+//            }
+//        })
 
     }
 
