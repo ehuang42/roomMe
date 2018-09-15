@@ -50,6 +50,11 @@ public class User {
         this._password = _password;
     }
 
+
+    public String toString() {
+        return _name;
+    }
+
     /**
      * Changes the user's credit by the specified amount.
      * Formula: newCredit = this.credit + delta;

@@ -49,13 +49,11 @@ import com.example.ehuang42.roommateapp.BuildConfig;
         private void loadDummyData() {
             _quests.add(new Quest("Do the dishes"));
             _quests.add(new Quest( "Take out trash"));
-            _quests.add(new Quest("Get grocheries"));
-            /*
-            _quests.get(0).getUsers().add(new User("Bob"));
-            _quests.get(0).getUsers().add(new User("Sally"));
-            _quests.get(1).getUsers().add(new User("Fred"));
-            _quests.get(1).getUsers().add(new User("Edith"));
-            */
+            _quests.add(new Quest("Get groceries"));
+            _quests.get(0).getUsers().add(new User("Bob", 0));
+            _quests.get(0).getUsers().add(new User("Sally", 2));
+            _quests.get(1).getUsers().add(new User("Fred", 4));
+            _quests.get(1).getUsers().add(new User("Edith", 6));
             _currentQuest = _quests.get(0);
         }
 

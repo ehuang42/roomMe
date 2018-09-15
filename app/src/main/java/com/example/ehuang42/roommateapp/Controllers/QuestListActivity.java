@@ -24,7 +24,7 @@ import com.example.ehuang42.roommateapp.R;
  */
 
 
-public class QuestListActivity extends Activity {
+public class QuestListActivity extends AppCompatActivity {
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -100,7 +100,7 @@ public class QuestListActivity extends Activity {
               Now we bind the data to the widgets.  In this case, pretty simple, put the id in one
               textview and the string rep of a Quest in the other.
              */
-                holder.mIdView.setText("" + mQuests.get(position).getName());
+                holder.mIdView.setText(mQuests.get(position).getName());
                 holder.mContentView.setText(mQuests.get(position).toString());
 
                 /*
