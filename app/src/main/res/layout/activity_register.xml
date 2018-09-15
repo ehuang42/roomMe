@@ -22,7 +22,9 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="241dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -33,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="193dp"
+        android:layout_marginBottom="212dp"
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPassword" />
@@ -44,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="122dp"
+        android:layout_marginBottom="150dp"
         android:ems="10"
         android:hint="Last Name"
         android:inputType="textPassword" />
@@ -55,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp"
+        android:layout_marginBottom="83dp"
         android:clickable="true"
         android:text="Register"
         android:textSize="18sp"
