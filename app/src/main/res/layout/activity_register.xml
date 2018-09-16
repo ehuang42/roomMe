@@ -17,6 +17,7 @@
         android:layout_marginTop="175dp"
         android:ems="10"
         android:hint="Email"
+        android:textColor="#b4a3db"
         android:inputType="text" />
 
     <EditText
@@ -27,6 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="241dp"
         android:ems="10"
+        android:textColor="#b4a3db"
         android:hint="Password"
         android:inputType="textPassword" />
 
@@ -62,6 +64,9 @@
         android:clickable="true"
         android:text="Register"
         android:textSize="18sp"
+        android:background="#d1c6eb"
+        android:fontFamily="monospace"
+        android:textColor="#2a155a"
         android:typeface="normal" />
 
 
