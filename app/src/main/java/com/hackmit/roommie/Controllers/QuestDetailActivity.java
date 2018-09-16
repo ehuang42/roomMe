@@ -33,12 +33,12 @@ import com.google.firebase.auth.FirebaseAuth;
 public class QuestDetailActivity extends AppCompatActivity {
 
     public void onClick(View v) {
+        Quest currentQuest = Model.getInstance().getCurrentQuest();
+        User currentUser =  new User(FirebaseAuth.getInstance().getCurrentUser()
+                .getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid());
         switch (v.getId()) {
             case R.id.questSignUpButton:
                 //grab the current quest
-                Quest currentQuest = Model.getInstance().getCurrentQuest();
-                User currentUser =  new User(FirebaseAuth.getInstance().getCurrentUser()
-                        .getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid());
                 if (currentQuest.getUsers().contains(currentUser)) {
                     Toast.makeText(this, "You have already signed up for this quest.", Toast
                             .LENGTH_LONG).show();
@@ -49,6 +49,19 @@ public class QuestDetailActivity extends AppCompatActivity {
                     startActivity(new Intent(this, QuestListActivity.class));
                 }
                 break;
+            case R.id.questCompleteButton:
+                //grab the current quests
+                if (currentQuest.getUsers().contains(currentUser)) {
+                    currentUser.set_credit(currentUser.get_credit() + currentQuest.getReward());
+                    Toast.makeText(this, "You've completed this quest.", Toast
+                            .LENGTH_LONG).show();
+                    startActivity(new Intent(this, QuestListActivity.class));
+                    Model.getInstance().removeQuest(currentQuest);
+                } else {
+                    Toast.makeText(this, "You cannot complete this quest!",
+                            Toast.LENGTH_LONG).show();
+                    }
+                    break;
         }
     }
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="#49599a"
     tools:context="com.hackmit.roommie.Controllers.QuestListActivity">
 
     <android.support.design.widget.AppBarLayout

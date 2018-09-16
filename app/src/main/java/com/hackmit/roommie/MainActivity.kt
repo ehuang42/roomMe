@@ -49,9 +49,6 @@ class MainActivity : AppCompatActivity() {
 
 
         if (!email.isEmpty() && !password.isEmpty()) {
-            if (rememberMeCheckBox.isChecked) {
-                
-            }
             this.mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener (this, OnCompleteListener<AuthResult> { task ->
                 if (task.isSuccessful) {

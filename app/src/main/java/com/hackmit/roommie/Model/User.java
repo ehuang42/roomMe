@@ -55,6 +55,16 @@ public class User {
         return _name;
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {return false;}
+        if (! (obj instanceof User)) {return false;}
+
+        User other = (User) obj;
+        return other.get_ID().equals(get_ID());
+    }
+
     /**
      * Changes the user's credit by the specified amount.
      * Formula: newCredit = this.credit + delta;

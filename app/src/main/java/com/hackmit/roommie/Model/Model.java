@@ -69,14 +69,12 @@ import java.util.List;
          * @param quest  the course to be added
          * @return true if added, false if a duplicate
          */
-            public boolean addQuest(Quest quest) {
-            for (Quest c : _quests) {
-                if (c.equals(quest)) return false;
-            }
+        public void addQuest(Quest quest) {
             _quests.add(quest);
-            return true;
         }
-
+        public void removeQuest(Quest quest) {
+            _quests.remove(quest);
+        }
         /**
          *
          * @return  the currently selected course
