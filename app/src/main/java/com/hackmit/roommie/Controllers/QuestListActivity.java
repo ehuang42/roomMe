@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.hackmit.roommie.MainActivity;
 import com.hackmit.roommie.Model.Model;
 import com.hackmit.roommie.Model.Quest;
 import com.hackmit.roommie.R;
@@ -40,6 +42,14 @@ public class QuestListActivity extends AppCompatActivity {
             assert recyclerView != null;
             //Step 2.  Hook up the adapter to the view
             setupRecyclerView((RecyclerView) recyclerView);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(QuestListActivity.this, CreateQuestActivity.class));
+            }
+        });
         }
 
         /**
