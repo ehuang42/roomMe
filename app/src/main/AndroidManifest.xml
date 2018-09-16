@@ -20,6 +20,12 @@
         <activity android:name=".Controllers.QuestListActivity"></activity>
         <activity android:name=".Controllers.QuestDetailActivity"></activity>
         <activity android:name=".Controllers.CreateQuestActivity"></activity>
+        <activity android:name=".Controllers.CreateGroup">
+            <intent-filter>
+                <action android:name="android.intent.action.ALL_APPS"></action>
+                <category android:name="android.intent.category.ALTERNATIVE"></category>
+            </intent-filter>
+        </activity>
 
     </application>
 
