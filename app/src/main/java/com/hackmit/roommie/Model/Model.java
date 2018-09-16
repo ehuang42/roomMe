@@ -86,6 +86,9 @@ import java.util.List;
 
         public void setCurrentQuest(Quest quest) { _currentQuest = quest; }
 
+        public void addQuest(Quest _quest) {
+            _quests.add(_quest);
+        }
 
 
          /*

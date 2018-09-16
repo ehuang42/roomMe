@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,13 @@ public class QuestListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(QuestListActivity.this, CreateQuestActivity.class));
+            }
+        });
 
         //Step 1.  Setup the recycler view by getting it from our layout in the main window
         View recyclerView = findViewById(R.id.quest_list);
@@ -41,6 +50,7 @@ public class QuestListActivity extends AppCompatActivity {
         //Step 2.  Hook up the adapter to the view
         setupRecyclerView((RecyclerView) recyclerView);
     }
+
 
     /**
      * Set up an adapter and hook it to the provided view
@@ -86,6 +96,7 @@ public class QuestListActivity extends AppCompatActivity {
             mQuests = items;
         }
 
+
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             /*
@@ -97,7 +108,10 @@ public class QuestListActivity extends AppCompatActivity {
             View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.quest_list_content, parent, false);
             return new ViewHolder(view);
+
+
         }
+
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
@@ -139,6 +153,7 @@ public class QuestListActivity extends AppCompatActivity {
                 }
             });
         }
+
 
         @Override
         public int getItemCount() {
