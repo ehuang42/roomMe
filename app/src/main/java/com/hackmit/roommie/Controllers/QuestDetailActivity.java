@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.hackmit.roommie.R;
 
@@ -23,7 +24,15 @@ import com.hackmit.roommie.R;
  * recycler view again.
  */
 public class QuestDetailActivity extends AppCompatActivity {
+    public void onClick(android.view.View view) {
+        switch (view.getId()) {
+            case R.id.questSignUpButton:
 
+                break;
+            default:
+                //do nothing
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

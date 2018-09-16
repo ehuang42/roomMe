@@ -1,10 +1,9 @@
 package com.hackmit.roommie.Model;
 //import android.support.annotation.NonNull;
 
+import com.hackmit.roommie.Model.Quest;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.hackmit.roommie.BuildConfig;
 
 
 /**
@@ -28,7 +27,7 @@ import com.hackmit.roommie.BuildConfig;
         private Quest _currentQuest;
 
         /** Null Object pattern, returned when no quest is found */
-        private final Quest theNullQuest = new Quest("No Such Quest");
+        private final Quest nullQuest = new Quest("Null");
 
 
         /**

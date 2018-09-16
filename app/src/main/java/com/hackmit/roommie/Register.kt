@@ -49,13 +49,14 @@ class register : AppCompatActivity() {
                     val uid = user!!.uid
                     mDatabase.child(uid).child("Name").setValue(name)
                     startActivity(Intent(this, Timeline::class.java))
-                    Toast.makeText(this, "Successfully registered :)", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Successfully registered!", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "Error registering, try again later :(", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Cannot process your registration, please try again " +
+                            "later.", Toast.LENGTH_LONG).show()
                 }
             })
         } else {
-            Toast.makeText(this,"Please fill up the Credentials :|", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Please fill in your credentials!", Toast.LENGTH_LONG).show()
         }
     }
 
