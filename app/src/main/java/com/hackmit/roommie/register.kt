@@ -11,7 +11,6 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.hackmit.roommie.Controllers.QuestListActivity
 
 class register : AppCompatActivity() {
 
@@ -49,15 +48,14 @@ class register : AppCompatActivity() {
                     val user = mAuth.currentUser
                     val uid = user!!.uid
                     mDatabase.child(uid).child("Name").setValue(name)
-                    startActivity(Intent(this, QuestListActivity::class.java))
-                    Toast.makeText(this, "Successfully registered!", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, Timeline::class.java))
+                    Toast.makeText(this, "Successfully registered :)", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "Cannot process your registration, please try again " +
-                            "later.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Error registering, try again later :(", Toast.LENGTH_LONG).show()
                 }
             })
         } else {
-            Toast.makeText(this,"Please fill in your credentials!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Please fill up the Credentials :|", Toast.LENGTH_LONG).show()
         }
     }
 
