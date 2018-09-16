@@ -37,7 +37,7 @@ public class QuestDetailActivity extends AppCompatActivity {
                 //get the current quest the user is viewing
                 Quest currentQuest = Model.getInstance().getCurrentQuest();
                 FirebaseUser currentFBUser = FirebaseAuth.getInstance().getCurrentUser();
-                User currentUser = new User(currentFBUser.getDisplayName(), currentFBUser.getUid());
+                User currentUser = new User(currentFBUser.getEmail(), currentFBUser.getUid());
                 boolean hasSignedUp = currentQuest.getUsers().contains(currentUser);
                 if (!hasSignedUp) {
                     //sign up!

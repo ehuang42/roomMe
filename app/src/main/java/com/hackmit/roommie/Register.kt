@@ -11,20 +11,20 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class register : AppCompatActivity() {
 
     val mAuth = FirebaseAuth.getInstance()
-    lateinit var mDatabase : DatabaseReference
-
+    var db = FirebaseDatabase.getInstance()
+    var dbRef = db.getReference("Users/User1/FirstName")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         val registerBtn = findViewById<View>(R.id.signup_btn) as Button
+        dbRef.addValueEventListener()
 
-
-        mDatabase = FirebaseDatabase.getInstance().getReference("Names")
 
 
         registerBtn.setOnClickListener(View.OnClickListener {
