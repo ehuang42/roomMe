@@ -49,10 +49,10 @@ import java.util.List;
             _quests.add(new Quest("Do the dishes"));
             _quests.add(new Quest( "Take out trash"));
             _quests.add(new Quest("Get groceries"));
-            _quests.get(0).getUsers().add(new User("Bob", 0));
-            _quests.get(0).getUsers().add(new User("Sally", 2));
-            _quests.get(1).getUsers().add(new User("Fred", 4));
-            _quests.get(1).getUsers().add(new User("Edith", 6));
+            _quests.get(0).getUsers().add(new User("Bob", 0 + ""));
+            _quests.get(0).getUsers().add(new User("Sally", 2 + ""));
+            _quests.get(1).getUsers().add(new User("Fred", 4 + ""));
+            _quests.get(1).getUsers().add(new User("Edith", 6 + ""));
             _currentQuest = _quests.get(0);
         }
 

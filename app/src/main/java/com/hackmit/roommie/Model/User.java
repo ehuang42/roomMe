@@ -8,8 +8,8 @@ public class User extends Application {
     }
     private String _name;
     private String _password;
+    private String _ID;
     private int _credit;
-    private int _ID;
 
     //option params
     /*
@@ -18,10 +18,10 @@ public class User extends Application {
 
     // TODO: 9/15/2018 add support for firebase authen
 
-    public User(String _name, int _credit) {
+    public User(String _name, String uid) {
         this._name = _name;
-        this._credit = _credit;
-        this._ID = hashCode();
+        this._ID = uid;
+        this._credit = 0;
     }
 
     public String get_name() {
@@ -40,8 +40,12 @@ public class User extends Application {
         this._credit = _credit;
     }
 
-    public int get_ID() {
+    public String get_ID() {
         return _ID;
+    }
+
+    public void set_ID(String _ID) {
+        this._ID = _ID;
     }
 
     public String get_password() {
@@ -52,9 +56,17 @@ public class User extends Application {
         this._password = _password;
     }
 
-
+    @Override
     public String toString() {
         return _name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {return false;}
+        if (! (obj instanceof User)) {return false;}
+        User other = (User) obj;
+        return other.get_ID().equals(get_ID());
     }
 
     /**

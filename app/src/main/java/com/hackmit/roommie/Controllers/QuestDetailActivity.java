@@ -8,8 +8,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.hackmit.roommie.Model.Model;
+import com.hackmit.roommie.Model.Quest;
+import com.hackmit.roommie.Model.User;
 import com.hackmit.roommie.R;
 
 
@@ -27,7 +33,22 @@ public class QuestDetailActivity extends AppCompatActivity {
     public void onClick(android.view.View view) {
         switch (view.getId()) {
             case R.id.questSignUpButton:
-
+                // TODO: 9/16/2018 Implement this button
+                //get the current quest the user is viewing
+                Quest currentQuest = Model.getInstance().getCurrentQuest();
+                FirebaseUser currentFBUser = FirebaseAuth.getInstance().getCurrentUser();
+                User currentUser = new User(currentFBUser.getDisplayName(), currentFBUser.getUid());
+                boolean hasSignedUp = currentQuest.getUsers().contains(currentUser);
+                if (!hasSignedUp) {
+                    //sign up!
+                    currentQuest.getUsers().add(currentUser);
+                    Toast.makeText(this, "You have signed up for this Quest!", Toast.LENGTH_LONG);
+                    //go back to the list
+                    startActivity(new Intent(this, QuestListActivity.class));
+                } else {
+                    Toast.makeText(this, "You have already signed up for this Quest!", Toast
+                            .LENGTH_LONG).show();
+                }
                 break;
             default:
                 //do nothing
@@ -39,22 +60,6 @@ public class QuestDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quest_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*
-                Snackbar.make(view, "Creating a new Student", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                Intent intent = new Intent(getBaseContext(), EditStudentActivity.class);
-                startActivity(intent);
-                */
-        /*
-            }
-        });
-        */
-
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

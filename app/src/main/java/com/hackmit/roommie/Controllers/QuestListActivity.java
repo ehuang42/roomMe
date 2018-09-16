@@ -56,6 +56,7 @@ public class QuestListActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.questSignUpButton:
                 //TODO implement this button
+
                 break;
             default:
                 //do nothing

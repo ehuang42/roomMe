@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Quest {
+    public static enum ROLE{
+        OWNER, ADMIN, PARTICIPANT;
+    }
+    private List<User> admin;
     private List<User> users;
     private UserGroup usersGroup;
     private User giver;
