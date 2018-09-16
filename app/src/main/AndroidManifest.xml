@@ -19,6 +19,7 @@
         <activity android:name=".register"></activity>
         <activity android:name=".Controllers.QuestListActivity"></activity>
         <activity android:name=".Controllers.QuestDetailActivity"></activity>
+        <activity android:name=".Controllers.CreateQuestActivity"></activity>
 
     </application>
 
