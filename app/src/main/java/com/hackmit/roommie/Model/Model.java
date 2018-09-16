@@ -1,10 +1,10 @@
-package com.example.ehuang42.roommateapp.Model;
+package com.hackmit.roommie.Model;
 //import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.ehuang42.roommateapp.BuildConfig;
+import com.hackmit.roommie.BuildConfig;
 
 
 /**

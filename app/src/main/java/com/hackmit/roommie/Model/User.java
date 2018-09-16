@@ -1,6 +1,8 @@
-package com.example.ehuang42.roommateapp.Model;
+package com.hackmit.roommie.Model;
 
-public class User {
+import android.app.Application;
+
+public class User extends Application {
     public enum GENDER {
         MALE, FEMALE, NONBINARY;
     }

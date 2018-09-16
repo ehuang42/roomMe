@@ -16,7 +16,9 @@
         </activity>
 
         <activity android:name=".Timeline" />
-        <activity android:name=".register"></activity>
+        <activity android:name=".register">
+
+        </activity>
     </application>
 
 </manifest>
