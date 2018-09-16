@@ -16,6 +16,7 @@ import com.hackmit.roommie.Model.Model;
 import com.hackmit.roommie.Model.Quest;
 import com.hackmit.roommie.Model.User;
 import com.hackmit.roommie.R;
+
 import java.util.List;
 
 /**

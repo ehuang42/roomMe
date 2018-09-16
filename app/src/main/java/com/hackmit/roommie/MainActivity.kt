@@ -5,13 +5,15 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.FirebaseUser
 import com.hackmit.roommie.Controllers.QuestListActivity
+import com.hackmit.roommie.R.id.signup_btn
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     val mAuth = FirebaseAuth.getInstance()
     val user  = FirebaseAuth.getInstance().currentUser
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         signup_btn.setOnClickListener(View.OnClickListener {
             view -> register()
         })
-
     }
 
     private fun register() {
@@ -44,23 +46,24 @@ class MainActivity : AppCompatActivity() {
         val passwordTxt = findViewById<View>(R.id.password) as EditText
         var email = emailTxt.text.toString().trim()
         var password = passwordTxt.text.toString().trim()
-        
+
+
         if (!email.isEmpty() && !password.isEmpty()) {
+            if (rememberMeCheckBox.isChecked) {
+                
+            }
             this.mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener (this, OnCompleteListener<AuthResult> { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, String.format("Logged in with %s.", emailTxt), Toast
-                            .LENGTH_LONG)
-                            .show()
                     startActivity(Intent(this, QuestListActivity::class.java))
+                    Toast.makeText(this, "Successfully Logged in!", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "Failed to log in. Please check your credentials!", Toast
-                            .LENGTH_LONG).show()
+                    Toast.makeText(this, "Error Logging in, please check your credentials and " +
+                            "try again later.", Toast.LENGTH_SHORT).show()
                 }
             })
-
         } else {
-            Toast.makeText(this, "Please fill in your credentials!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Please fill in your credentials", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -1,7 +1,6 @@
 package com.hackmit.roommie.Model;
 //import android.support.annotation.NonNull;
 
-import com.hackmit.roommie.Model.Quest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ import java.util.List;
         private Quest _currentQuest;
 
         /** Null Object pattern, returned when no quest is found */
-        private final Quest nullQuest = new Quest("Null");
+        private final Quest theNullQuest = new Quest("No Such Quest");
 
 
         /**
@@ -70,7 +69,7 @@ import java.util.List;
          * @param quest  the course to be added
          * @return true if added, false if a duplicate
          */
-            public boolean addCourse(Quest quest) {
+            public boolean addQuest(Quest quest) {
             for (Quest c : _quests) {
                 if (c.equals(quest)) return false;
             }

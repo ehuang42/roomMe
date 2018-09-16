@@ -38,7 +38,7 @@
         android:layout_marginBottom="212dp"
         android:ems="10"
         android:hint="First Name"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/lastname"
@@ -49,7 +49,7 @@
         android:layout_marginBottom="150dp"
         android:ems="10"
         android:hint="Last Name"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/signup_btn"

@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/quest_list"
-    android:name="com.example.ehuang42.roommateapp.Controllers.QuestListFragment"
+    android:name="com.hackmit.roommie.Controllers.QuestListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".Controllers.QuestListActivity"
-    tools:listitem="@layout/course_list_content" />
+    tools:context="com.hackmit.roommie.Controllers.QuestListActivity"
+    tools:listitem="@layout/quest_list_content" />

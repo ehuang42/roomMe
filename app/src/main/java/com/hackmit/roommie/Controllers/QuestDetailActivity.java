@@ -2,21 +2,22 @@ package com.hackmit.roommie.Controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.support.design.widget.FloatingActionButton;
-//import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Spinner;
+import android.view.View;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.hackmit.roommie.Model.Model;
 import com.hackmit.roommie.Model.Quest;
 import com.hackmit.roommie.Model.User;
 import com.hackmit.roommie.R;
+
+import com.google.firebase.auth.FirebaseAuth;
+
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
 
 
 /**
@@ -30,36 +31,49 @@ import com.hackmit.roommie.R;
  * recycler view again.
  */
 public class QuestDetailActivity extends AppCompatActivity {
-    public void onClick(android.view.View view) {
-        switch (view.getId()) {
+
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.questSignUpButton:
-                // TODO: 9/16/2018 Implement this button
-                //get the current quest the user is viewing
+                //grab the current quest
                 Quest currentQuest = Model.getInstance().getCurrentQuest();
-                FirebaseUser currentFBUser = FirebaseAuth.getInstance().getCurrentUser();
-                User currentUser = new User(currentFBUser.getEmail(), currentFBUser.getUid());
-                boolean hasSignedUp = currentQuest.getUsers().contains(currentUser);
-                if (!hasSignedUp) {
-                    //sign up!
-                    currentQuest.getUsers().add(currentUser);
-                    Toast.makeText(this, "You have signed up for this Quest!", Toast.LENGTH_LONG);
-                    //go back to the list
-                    startActivity(new Intent(this, QuestListActivity.class));
-                } else {
-                    Toast.makeText(this, "You have already signed up for this Quest!", Toast
+                User currentUser =  new User(FirebaseAuth.getInstance().getCurrentUser()
+                        .getDisplayName(), FirebaseAuth.getInstance().getCurrentUser().getUid());
+                if (currentQuest.getUsers().contains(currentUser)) {
+                    Toast.makeText(this, "You have already signed up for this quest.", Toast
                             .LENGTH_LONG).show();
+                } else {
+                    currentQuest.getUsers().add(currentUser);
+                    Toast.makeText(this, "You have successfully signed up for this quest!",
+                            Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(this, QuestListActivity.class));
                 }
                 break;
-            default:
-                //do nothing
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quest_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
+        /*
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*
+                Snackbar.make(view, "Creating a new Student", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                Intent intent = new Intent(getBaseContext(), EditStudentActivity.class);
+                startActivity(intent);
+                */
+        /*
+            }
+        });
+        */
+
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

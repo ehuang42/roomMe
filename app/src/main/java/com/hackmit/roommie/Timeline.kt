@@ -20,12 +20,14 @@ class Timeline : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_timeline)
+        var uid = user!!.uid
+        setContentView(R.layout.activity_quest_list)
+
         //Tod-o: handle dataChange and onCancelled
 
 //        val nameTxt = findViewById<View>(R.id.lastname) as TextView
 
-        var uid = user!!.uid
+
 
 //        mDatabase = FirebaseDatabase.getInstance().getReference("Names")
 //
@@ -37,6 +39,8 @@ class Timeline : AppCompatActivity() {
 //                nameTxt.text =  "Welcome " + snapshot.value.toString()
 //            }
 //        })
+
+
 
     }
 
