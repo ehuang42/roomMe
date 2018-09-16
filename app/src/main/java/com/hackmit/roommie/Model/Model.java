@@ -85,40 +85,8 @@ import java.util.List;
 
         public void setCurrentQuest(Quest quest) { _currentQuest = quest; }
 
-
-
-         /*
-        /**
-         * add a user to the current quest
-         *
-         * @param User the student to add
-         * @return true if student added, false if not added
-         */
-        /*
-        public boolean addUser(User user) {
-            return _currentQuest != null && _currentQuest.addUser(user);
+        public void addQuest(Quest _quest) {
+            _quests.add(_quest);
         }
-
-        /**
-         * Replace an existing students data with new data
-         *
-         * @param user the student being edited
-         */
-        /*
-        public void replaceUserData(User user) {
-            User existing = _currentQuest.findUserById(user.get_name());
-
-            //if existing comes back null, something is seriously wrong
-            if (BuildConfig.DEBUG && (existing == null)) { throw new AssertionError(); }
-
-            //update the name
-            existing.set_name(user.get_credit());
-
-            //update the major
-            existing.set_credit(user.get_credit());
-
-        }
-        */
-    //}
 
 }

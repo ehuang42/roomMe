@@ -13,13 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.hackmit.roommie.Model.Model;
 import com.hackmit.roommie.Model.Quest;
 import com.hackmit.roommie.Model.User;
 
-import cs2340.gatech.edu.lab3.R;
-import cs2340.gatech.edu.lab3.model.ClassStanding;
-import cs2340.gatech.edu.lab3.model.Model;
-import cs2340.gatech.edu.lab3.model.Student;
+import com.hackmit.roommie.R;
+
 
 public class CreateQuestActivity extends AppCompatActivity {
 
@@ -41,7 +40,7 @@ public class CreateQuestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_student);
+        setContentView(R.layout.activity_create_new_quest);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -57,39 +56,9 @@ public class CreateQuestActivity extends AppCompatActivity {
         /**
          * Grab the dialog widgets so we can get info for later
          */
-        nameField = (EditText) findViewById(R.id.student_name_input);
-        majorSpinner = (Spinner) findViewById(R.id.spinner);
-        standingSpinner = (Spinner) findViewById(R.id.spinner2);
-        idField = (TextView) findViewById(R.id.student_id_field);
-
-        /*
-          Set up the adapter to display the allowable majors in the spinner
-         */
-        ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Student.legalMajors);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        majorSpinner.setAdapter(adapter);
-         /*
-          Set up the adapter to display the allowable standings in the spinner
-         */
-        ArrayAdapter<String> standingAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, ClassStanding.values());
-        standingAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        standingSpinner.setAdapter(standingAdapter);
-        /*
-           If a student has been passed in, this was an edit, if not, this is a new add
-         */
-        if (getIntent().hasExtra(CourseDetailFragment.ARG_STUDENT_ID)) {
-            _student = (Student) getIntent().getParcelableExtra(CourseDetailFragment.ARG_STUDENT_ID);
-            majorSpinner.setSelection(Student.findPosition(_student.getMajor()));
-            standingSpinner.setSelection(_student.getStanding().ordinal());
-            editing = true;
-        } else {
-            _student = new Student();
-            editing = false;
-        }
-
-        nameField.setText(_student.getName());
-        idField.setText("" + _student.getId());
-
+        nameField = (EditText) findViewById(R.id.name_input);
+        descriptionField = (EditText) findViewById(R.id.description_input);
+        rewardField = (EditText) findViewById(R.id.reward_input);
     }
 
     /**
@@ -100,17 +69,10 @@ public class CreateQuestActivity extends AppCompatActivity {
         Log.d("Edit", "Add Student");
         Model model = Model.getInstance();
 
-        _student.setName(nameField.getText().toString());
-        _student.setMajor((String) majorSpinner.getSelectedItem());
-        _student.setStanding((ClassStanding) standingSpinner.getSelectedItem());
-
-        Log.d("Edit", "Got new student data: " + _student);
-        if (!editing) {
-            model.addStudent(_student);
-        }  else {
-            model.replaceStudentData(_student);
-        }
-
+        _quest.setName(nameField.getText().toString());
+        _quest.setDescription(descriptionField.getText().toString());
+        _quest.setReward(Integer.parseInt(rewardField.getText().toString()););
+        model.addQuest(_quest);
         finish();
     }
 
@@ -122,17 +84,5 @@ public class CreateQuestActivity extends AppCompatActivity {
     public void onCancelPressed(View view) {
         Log.d("Edit", "Cancel Student");
         finish();
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-          _major = parent.getItemAtPosition(position).toString();
-        _standing = (ClassStanding) parent.getItemAtPosition(position);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        _major = "NA";
     }
 }
