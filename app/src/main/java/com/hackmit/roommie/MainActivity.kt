@@ -11,6 +11,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.hackmit.roommie.Controllers.QuestListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             this.mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener (this, OnCompleteListener<AuthResult> { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this, Timeline::class.java))
+                    startActivity(Intent(this, QuestListActivity::class.java))
                     Toast.makeText(this, "Successfully Logged in :)", Toast.LENGTH_LONG).show()
                 } else {
                     Toast.makeText(this, "Error Logging in :(", Toast.LENGTH_SHORT).show()

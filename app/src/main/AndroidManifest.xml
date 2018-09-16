@@ -17,6 +17,9 @@
 
         <activity android:name=".Timeline" />
         <activity android:name=".register"></activity>
+        <activity android:name=".Controllers.QuestListActivity"></activity>
+        <activity android:name=".Controllers.QuestDetailActivity"></activity>
+
     </application>
 
 </manifest>
