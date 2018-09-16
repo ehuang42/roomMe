@@ -59,6 +59,6 @@
         android:onClick="onClick"
         app:layout_anchor="@+id/quest_detail_container"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/stat_notify_chat" />
+        app:srcCompat="@android:drawable/checkbox_on_background" />
 
 </android.support.design.widget.CoordinatorLayout>

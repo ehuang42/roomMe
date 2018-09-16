@@ -31,7 +31,7 @@
         android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Description"
+        android:hint="Description"
         app:layout_constraintBottom_toTopOf="@+id/reward_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,7 +45,7 @@
         android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         app:layout_constraintBottom_toTopOf="@+id/description_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
