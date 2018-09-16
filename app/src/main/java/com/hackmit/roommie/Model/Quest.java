@@ -1,111 +1,68 @@
 package com.hackmit.roommie.Model;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class Quest {
-    public static enum ROLE{
-        OWNER, ADMIN, PARTICIPANT;
-    }
-    private List<User> admin;
-    private List<User> users;
-    private UserGroup usersGroup;
+    private String name;
     private User giver;
-    private String title;
-    private String detail;
+    private UserGroup usersGroup;
+    private List<User> users;
     private int reward;
-    private int questID;
-
-    public Quest() {
-    }
-
-    public Quest(String title) {
-        this.users = new ArrayList<>();
-        this.usersGroup = new UserGroup();
-        this.giver = null;
-        this.title = title;
-        this.detail = "";
-        this.reward = 0;
-        this.questID = hashCode();
-    }
-
-    public Quest(List<User> users, UserGroup usersGroup, User giver, String title, String detail, int reward) {
-        this.users = users;
-        this.usersGroup = usersGroup;
+    private String description;
+    public Quest(String name, User giver, int reward) {
+        this.name = name;
         this.giver = giver;
-        this.title = title;
-        this.detail = detail;
         this.reward = reward;
-        this.questID = hashCode();
+        this.usersGroup = new UserGroup();
+        this.users = usersGroup.get_users();
+        this.description = "This is a quest";
     }
-
-    public List<User> getUsers() {
-        return users;
+    public Quest(String name) {
+        this.name = name;
+        this.giver = null;
+        this.reward = 0;
+        this.usersGroup = new UserGroup();
+        this.users = usersGroup.get_users();
+        this.description = "This is a quest";
     }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public String getName() {
+        return name;
     }
-
-    public UserGroup getUsersGroup() {
-        return usersGroup;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public void setUsersGroup(UserGroup usersGroup) {
-        this.usersGroup = usersGroup;
+    public String getDescription() {
+        return description;
     }
-
+    public void setDescription(String description) {
+        this.description = description;
+    }
     public User getGiver() {
         return giver;
     }
-
     public void setGiver(User giver) {
         this.giver = giver;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
     public int getReward() {
         return reward;
     }
-
     public void setReward(int reward) {
         this.reward = reward;
     }
-
-    @Override
-    public String toString() {
-        return title;
+    public ArrayList<User> getUsers() {
+        return usersGroup.get_users();
     }
-
-    /**
-     * Quests are considered the same when they have the same title and giver.
-     * @param obj
-     * @return if two quests have the same title and giver.
-     */
+    public void setUsers(ArrayList<User> users) {
+        this.usersGroup.set_users(users);
+    }
+    public void setUser(User taker) {
+        this.usersGroup.add(taker);
+    }
+    public String toString() {
+        return name;
+    }
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (obj instanceof Quest) {
-            return false;
-        }
-        Quest other = (Quest) obj;
-        return other.title.equals(title) && other.giver.equals(giver);
+    public boolean equals(Object o) {
+        Quest c = (Quest) o;
+        return (c.getName().equals(name));
     }
 }
